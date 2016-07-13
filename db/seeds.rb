@@ -23,17 +23,17 @@ Recipe.create({name: "Carrot Coconut Soup", difficulty_level: "Super Hard", prep
 
 Recipe.create({name: "Red Wine", difficulty_level: "Not super Hard", prep_time: "A long time", directions: "There's a lot of stuff", description: "The crimini mushrooms and tawny port gives this Barley Mushroom Soup extra flavor. This soup is a great way to enjoy the health benefits of barley.", creator: "I made this", servings: 4, category_id: 1, user_id: 1})
 
-Recipe.create({name: "Lentils", difficulty_level: "Not sure", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 3})
+Recipe.create({name: "Lentils", difficulty_level: "Not sure", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 2, user_id: 3})
 
-Recipe.create({name: "Braised Ribs", difficulty_level: "Ridiculous", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 4})
+Recipe.create({name: "Braised Ribs", difficulty_level: "Ridiculous", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 3, user_id: 4})
 
-Recipe.create({name: "Mushroom", difficulty_level: "Hard", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 5})
+Recipe.create({name: "Mushroom", difficulty_level: "Hard", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 4})
 
-Recipe.create({name: "Risotto", difficulty_level: "Easy", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 3})
+Recipe.create({name: "Risotto", difficulty_level: "Easy", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 1})
 
-Recipe.create({name: "Seafood Gazpacho", difficulty_level: "Real Easy", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 4})
+Recipe.create({name: "Seafood Gazpacho", difficulty_level: "Real Easy", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 2, user_id: 4})
 
-Recipe.create({name: "Spicy Posole Soup", difficulty_level: "Medium", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 2})
+Recipe.create({name: "Spicy Posole Soup", difficulty_level: "Medium", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 3, user_id: 2})
 
 RecipeIngredient.create(recipe_id: 1, ingredient_id: 1, measurement_id: 1, quantity: 2.0)
 RecipeIngredient.create(recipe_id: 1, ingredient_id: 2, measurement_id: 1, quantity: 2.0)
