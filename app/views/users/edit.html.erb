@@ -1,1 +1,5 @@
-edit.html.erb
+<h1> Edit </h1>
+<% provide(:button_text, 'Save Changes') %>
+<%= render 'form'%>
+
+<%=link_to "delete account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" }%>
