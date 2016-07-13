@@ -6,4 +6,7 @@ class Recipe < ActiveRecord::Base
   has_many :ratings, dependent: :destroy
   validates :name, :difficulty_level, :prep_time, :directions, presence: true
   validates :description, :creator, :servings, :category, presence: true
+
+  DIFFICULTY = ['Easy', 'Medium', 'Hard']
+  TIME = ['Minutes', 'Hours']
 end

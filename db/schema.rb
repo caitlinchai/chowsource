@@ -33,12 +33,6 @@ ActiveRecord::Schema.define(version: 20160713201216) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "measurements", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "ratings", force: :cascade do |t|
     t.integer  "user_id",    null: false
     t.integer  "recipe_id",  null: false
