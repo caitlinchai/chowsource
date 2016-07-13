@@ -2,7 +2,8 @@
 <p><%@user.location%></p>
 <p><%@user.about%></p>
 
+<h2>Your Recipes</h2>
 <%@recipes.each do |recipe|%>
-  <%=link_to recipe.name + "by "+ recipe.creator recipe_path%>
+  <%=link_to recipe.name, recipe_path%>
   <p>added <%= time_ago_in_words(recipe.created_at) %> ago.</p>
 <%end%>
