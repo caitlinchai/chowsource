@@ -7,6 +7,6 @@ class Recipe < ActiveRecord::Base
   validates :name, :difficulty_level, :prep_time, :directions, presence: true
   validates :description, :creator, :servings, :category, presence: true
 
-  DIFFICULTY = ['Easy', 'Medium', 'Hard']
-  TIME = ['Minutes', 'Hours']
+  DIFFICULTY = ['Beginner', 'Intermediate', 'Expert']
+  TIME = ['minutes', 'hours']
 end
