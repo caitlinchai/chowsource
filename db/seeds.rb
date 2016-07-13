@@ -23,17 +23,17 @@ Recipe.create({name: "Carrot Coconut Soup", difficulty_level: "Super Hard", prep
 
 Recipe.create({name: "Red Wine", difficulty_level: "Not super Hard", prep_time: "A long time", directions: "There's a lot of stuff", description: "The crimini mushrooms and tawny port gives this Barley Mushroom Soup extra flavor. This soup is a great way to enjoy the health benefits of barley.", creator: "I made this", servings: 4, category_id: 1, user_id: 1})
 
-Recipe.create({name: "Lentils", difficulty_level: "Not sure", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 3})
+Recipe.create({name: "Lentils", difficulty_level: "Not sure", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 2, user_id: 3})
 
-Recipe.create({name: "Braised Ribs", difficulty_level: "Ridiculous", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 4})
+Recipe.create({name: "Braised Ribs", difficulty_level: "Ridiculous", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 3, user_id: 4})
 
-Recipe.create({name: "Mushroom", difficulty_level: "Hard", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 5})
+Recipe.create({name: "Mushroom", difficulty_level: "Hard", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 4})
 
-Recipe.create({name: "Risotto", difficulty_level: "Easy", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 3})
+Recipe.create({name: "Risotto", difficulty_level: "Easy", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 1})
 
-Recipe.create({name: "Seafood Gazpacho", difficulty_level: "Real Easy", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 4})
+Recipe.create({name: "Seafood Gazpacho", difficulty_level: "Real Easy", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 2, user_id: 4})
 
-Recipe.create({name: "Spicy Posole Soup", difficulty_level: "Medium", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 1, user_id: 2})
+Recipe.create({name: "Spicy Posole Soup", difficulty_level: "Medium", prep_time: "A long time", directions: "There's a lot of stuff", description: "This tastes good", creator: "I made this", servings: 4, category_id: 3, user_id: 2})
 
 RecipeIngredient.create(recipe_id: 1, ingredient_id: 1, measurement_id: 1, quantity: 2.0)
 RecipeIngredient.create(recipe_id: 1, ingredient_id: 2, measurement_id: 1, quantity: 2.0)
@@ -56,3 +56,15 @@ RecipeIngredient.create(recipe_id: 7, ingredient_id: 4, measurement_id: 1, quant
 RecipeIngredient.create(recipe_id: 8, ingredient_id: 2, measurement_id: 1, quantity: 2.0)
 RecipeIngredient.create(recipe_id: 8, ingredient_id: 3, measurement_id: 1, quantity: 2.0)
 RecipeIngredient.create(recipe_id: 8, ingredient_id: 1, measurement_id: 1, quantity: 2.0)
+
+Rating.create(user_id: 1, recipe_id: 1, stars: 2.0)
+Rating.create(user_id: 3, recipe_id: 2, stars: 3.0)
+Rating.create(user_id: 2, recipe_id: 3, stars: 4.0)
+Rating.create(user_id: 3, recipe_id: 2, stars: 5.0)
+Rating.create(user_id: 1, recipe_id: 4, stars: 3.0)
+Rating.create(user_id: 2, recipe_id: 5, stars: 2.0)
+Rating.create(user_id: 4, recipe_id: 6, stars: 5.0)
+Rating.create(user_id: 2, recipe_id: 2, stars: 1.0)
+Rating.create(user_id: 5, recipe_id: 3, stars: 2.0)
+Rating.create(user_id: 3, recipe_id: 7, stars: 3.0)
+Rating.create(user_id: 1, recipe_id: 7, stars: 2.0)
