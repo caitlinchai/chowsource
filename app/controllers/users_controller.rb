@@ -23,8 +23,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Success! Welcome to ChowSource."
-      redirect_to @user
+      flash[:notice] = "Success! Welcome to ChowSource. Please login to continue."
+      redirect_to login_url
     else
       render 'new'
     end
