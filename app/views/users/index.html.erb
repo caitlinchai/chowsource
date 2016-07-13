@@ -1,0 +1,12 @@
+<h1>All Users</h1>
+
+<div id="all-users-container">
+  <%@users.each do |user|%>
+    <div class="single_user">
+      <h3><%=link_to user.name, user%></h3>
+      <%if user.location%>
+        <p>from <%=user.location%></p>
+      <%end%>
+    </div>
+  <%end%>
+</div>
