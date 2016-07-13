@@ -1,8 +1,5 @@
 == README
 
-
-Things you may want to cover:
-
 * Ruby version: ruby 2.2.3
 
 * System dependencies
