@@ -5,22 +5,25 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.where(user_id: params[:user_id] )
   end
 
   def new
     @user = User.find(params[:user_id])
-    @recipe = @user.recipes.new
     @categories = Category.all
+    @recipe = @user.recipes.new
+    @ingredient = @recipe.ingredients.new
   end
 
   def create
     @user = User.find(params[:user_id])
     @recipe = @user.recipes.build(recipe_params)
+    @categories = Category.all
+    
     if @recipe.save
       redirect_to @recipe
     else
-      @categories = Category.all
+      @errors = @recipe.errors.full_messages
       render 'new'
     end
   end
