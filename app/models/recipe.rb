@@ -14,6 +14,11 @@ class Recipe < ActiveRecord::Base
   TIME = ['minutes', 'hours']
 
   def average_rating
-    self.ratings.average(:stars).round(2).to_f if self.ratings.average(:stars) else 0
+    # binding.pry
+    if self.ratings(:stars).empty?
+      return 0
+    else
+      return self.ratings.average(:stars).round(2).to_f
+    end
   end
 end
