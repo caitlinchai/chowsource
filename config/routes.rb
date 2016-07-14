@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   end
   resources :categories, only:[:index, :show]
   resources :ingredients
+
+  resources :recipes do
+    resources :ratings, shallow: true
+  end
 end

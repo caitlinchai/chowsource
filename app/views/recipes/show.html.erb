@@ -1,6 +1,24 @@
 <div class="recipe_show">
 <h1 class="recipe_name"><%=@recipe.name %></h1>
-<%= @recipe.average_rating %>
+
+<div class="stars">
+  <%= link_to recipe_ratings_path(@recipe) do
+    image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'")
+end %>
+  <%= link_to recipe_ratings_path(@recipe) do
+    image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'")
+end %>
+<%= link_to recipe_ratings_path(@recipe) do
+    image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'")
+end %>
+<%= link_to recipe_ratings_path(@recipe) do
+    image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'")
+end %>
+<%= link_to recipe_ratings_path(@recipe) do
+    image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'")
+end %>
+</div>
+
 
 
   <p><%= @recipe.description %></p>
