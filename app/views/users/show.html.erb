@@ -9,7 +9,7 @@
 <h3>About</h3>
 <p><%=@user.about%></p>
 
-<h2>Your Recipes</h2>
+<h3>Recipes</h3>
 <%@recipes.each do |recipe|%>
   <%=link_to recipe.name, recipe%>
   <p>added <%= time_ago_in_words(recipe.created_at) %> ago.</p>
