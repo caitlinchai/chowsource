@@ -23,8 +23,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Success! Welcome to ChowSource. Please login to continue."
-      redirect_to login_url
+      flash[:notice] = "Success! Welcome to ChowSource."
+      login(@user)
+      redirect_to edit_user_path(@user)
     else
       render 'new'
     end
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:notice]="Updated account."
+      flash[:notice]="Successfully updated your information."
       redirect_to @user
     else
       render 'edit'
@@ -53,7 +54,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:name, :email, :password, :about, :location)
   end
 
   def logged_in_user
