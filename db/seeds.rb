@@ -21,9 +21,9 @@ Measurement.create(name: 'tsp')
 Measurement.create(name: 'tbsp')
 
 
-Recipe.create({name: "Carrot Coconut Soup", difficulty_level: "Expert", prep_time_hours: 1, prep_time_min: "0", directions: "Heat 1 TBS broth in a medium soup pot. Healthy Sauté onion in broth over medium heat for about 5 minutes, stirring often.", description: "The ginger and curry powder add great flavor to this easy-to-prepare soup. It's also rich in vitamin A and tastes great!", creator: "Grandma", servings: 4, category_id: 1, user_id: 2})
+Recipe.create({name: "Carrot Coconut Soup", difficulty_level: "Expert", prep_time_hours: 1, prep_time_min: 0, directions: "Heat 1 TBS broth in a medium soup pot. Healthy Sauté onion in broth over medium heat for about 5 minutes, stirring often.", description: "The ginger and curry powder add great flavor to this easy-to-prepare soup. It's also rich in vitamin A and tastes great!", creator: "Grandma", servings: 4, category_id: 1, user_id: 2})
 
-Recipe.create({name: "Red Wine", difficulty_level: "Beginner", prep_time_hours: 0, prep_time_min: "20", directions: "There's a lot of stuff", description: "The crimini mushrooms and tawny port gives this Barley Mushroom Soup extra flavor. This soup is a great way to enjoy the health benefits of barley.", creator: "Grandma", servings: 4, category_id: 1, user_id: 1})
+Recipe.create({name: "Red Wine", difficulty_level: "Beginner", prep_time_hours: 0, prep_time_min: 20, directions: "There's a lot of stuff", description: "The crimini mushrooms and tawny port gives this Barley Mushroom Soup extra flavor. This soup is a great way to enjoy the health benefits of barley.", creator: "Grandma", servings: 4, category_id: 1, user_id: 1})
 
 Recipe.create({name: "Lentils", difficulty_level: "Intermediate", prep_time_hours: 0, prep_time_min: "30", directions: "There's a lot of stuff", description: "This tastes really, really good", creator: "Grandma", servings: 4, category_id: 2, user_id: 3})
 
