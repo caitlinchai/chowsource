@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :update, :destroy, :password]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "Success! Welcome to ChowSource."
       login(@user)
-      redirect_to edit_user_path(@user)
+      redirect_to @user
     else
       render 'new'
     end
@@ -35,13 +35,29 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def password
+    render 'password'
+  end
+
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:notice]="Successfully updated your information."
+      flash[:notice]="Updated."
       redirect_to @user
     else
       render 'edit'
+    end
+  end
+
+  def update_password
+    @user = current_user
+    if @user.authenticate(params[:user][:current_password]) && @user.update_attributes(user_params)
+      flash[:notice]="Password changed."
+      redirect_to @user
+    else
+      @errors = @user.errors.full_messages.join if @user.errors.count > 0
+      @errors = "Wrong password. Please enter your current password." unless @errors
+      render 'password'
     end
   end
 
