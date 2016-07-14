@@ -9,6 +9,9 @@ class Recipe < ActiveRecord::Base
   validates :name, :difficulty_level, :directions, presence: true
   validates :description, :creator, :servings, :category, presence: true
   validates :category, uniqueness:{scope: [:user, :category], message: "only one recipe per category per user"}
+
+  include PgSearch
+  multisearchable :against => [:name, :directions]
   DIFFICULTY = ['Beginner', 'Intermediate', 'Expert']
   TIME = ['minutes', 'hours']
 
