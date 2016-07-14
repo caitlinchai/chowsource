@@ -9,4 +9,5 @@ class Recipe < ActiveRecord::Base
 
   DIFFICULTY = ['Beginner', 'Intermediate', 'Expert']
   TIME = ['minutes', 'hours']
+
 end
