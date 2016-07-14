@@ -11,9 +11,8 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @categories = Category.all
-    @recipe = @user.recipes.new
+    @recipe = current_user.recipes.new
     @ingredient = @recipe.ingredients.new
   end
 
@@ -21,9 +20,9 @@ class RecipesController < ApplicationController
     @user = User.find(params[:user_id])
     @recipe = @user.recipes.build(recipe_params)
     @categories = Category.all
-    
+
     if @recipe.save
-      redirect_to @recipe
+      redirect_to new_recipe_ingredient_path
     else
       @errors = @recipe.errors.full_messages
       render 'new'
@@ -48,7 +47,7 @@ class RecipesController < ApplicationController
   end
 
   def correct_user
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id] )
     redirect_to(root_url) unless current_user?(@user)
   end
 end
