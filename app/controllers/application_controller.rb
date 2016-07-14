@@ -6,10 +6,9 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
   def index
-    @appetizers = Recipe.joins(:ratings).where(category_id: 1).order("ratings.stars").limit(5)
-    @soups_and_salads = Recipe.joins(:ratings).where(category_id: 2).order("ratings.stars").limit(5)
-    @main_course = Recipe.joins(:ratings).where(category_id: 3).order("ratings.stars").limit(5)
-    @dessert = Recipe.joins(:ratings).where(category_id: 4).order("ratings.stars").limit(5)
+    @appetizers = Category.find(1).top_five
+    @soups_and_salads = Category.find(2).top_five
+    @main_course = Category.find(3).top_five
+    @dessert = Category.find(4).top_five
   end
-
 end

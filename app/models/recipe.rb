@@ -10,4 +10,7 @@ class Recipe < ActiveRecord::Base
   DIFFICULTY = ['Beginner', 'Intermediate', 'Expert']
   TIME = ['minutes', 'hours']
 
+  def average_rating
+    self.ratings.average(:stars).round(2).to_f if self.ratings.average(:stars) else 0
+  end
 end
