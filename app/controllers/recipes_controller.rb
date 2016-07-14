@@ -20,6 +20,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to @recipe
     else
+      @categories = Category.all
       render 'new'
     end
   end
