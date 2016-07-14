@@ -9,6 +9,7 @@
     <% (5 - @current_rating).times do |star_value| %>
       <%= image_tag("star.png") %>
     <% end %>
+    <p>Thanks for voting!</p>
   <% else %>
     <% 5.times do |star_value| %>
       <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{star_value}", method: :create %>
