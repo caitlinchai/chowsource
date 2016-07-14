@@ -36,7 +36,7 @@
 
   <p>
     <%= f.label :category_id, "Category" %><br>
-    <%= f.select :category_id, Category.all.map{|c| [c.name, c.id]} =%>
+    <%= f.select :category_id, @categories.map{|c| [c.name, c.id]} =%>
   </p>
 
   <div id="ingredient_list">

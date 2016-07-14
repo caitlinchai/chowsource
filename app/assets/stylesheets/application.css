@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+.recipe_show, .center {
+	height: 200px;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.recipe_name { 
+	text-align: center;
+	background-image: url(/app/assets/images/grid_paper.jpeg)
+}
