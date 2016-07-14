@@ -2,18 +2,11 @@
 <h1 class="recipe_name"><%=@recipe.name %></h1>
 
 <div class="stars">
-
 <% 5.times do |star_value| %>
   <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{star_value}", method: :create %>
 <% end %>
 </div>
-
-<% if @vote_saved %>
-  <%= "Thanks for voting" %>
-<% end %>
-
-
-
+  <p>Average Rating: <%= @recipe.average_rating %></p>
   <p><%= @recipe.description %></p>
 
   <div>Author: <%= @recipe.creator %></div>
