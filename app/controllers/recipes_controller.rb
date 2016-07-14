@@ -21,7 +21,7 @@ class RecipesController < ApplicationController
     @user = User.find(params[:user_id])
     @recipe = @user.recipes.build(recipe_params)
     @categories = Category.all
-    
+
     if @recipe.save
       redirect_to @recipe
     else
@@ -48,7 +48,7 @@ class RecipesController < ApplicationController
   end
 
   def correct_user
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     redirect_to(root_url) unless current_user?(@user)
   end
 end
