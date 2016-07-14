@@ -4,6 +4,9 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    if current_user.ratings.where(recipe_id: @recipe.id).present?
+      @current_rating = current_user.ratings.where(recipe_id: @recipe.id).first.stars.to_i
+    end
   end
 
   def index
@@ -21,7 +24,7 @@ class RecipesController < ApplicationController
     @user = User.find(params[:user_id])
     @recipe = @user.recipes.build(recipe_params)
     @categories = Category.all
-    
+
     if @recipe.save
       redirect_to @recipe
     else
