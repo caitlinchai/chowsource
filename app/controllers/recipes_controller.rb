@@ -1,11 +1,13 @@
 class RecipesController < ApplicationController
+  before_action :logged_in_user, only: [:new, :edit, :update, :destroy, :password]
+  before_action :correct_user, only: [:new, :create, :edit, :destroy]
 
   def show
     @recipe = Recipe.find(params[:id])
   end
 
   def index
-    @recipes = Recipe.where(user_id: params[:user_id] )
+    @recipes = Recipe.all
   end
 
   def new
@@ -36,5 +38,17 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:name, :category_id, :difficulty_level, :prep_time_hours, :prep_time_min, :directions, :description, :creator, :servings)
+  end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:notice]="Please log in."
+      redirect_to login_url
+    end
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
   end
 end

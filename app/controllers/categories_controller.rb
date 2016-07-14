@@ -6,8 +6,6 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(id_params)
     @recipes = @category.recipes
-     # Recipe.where( category_id: id_params )
-
   end
 
   private
