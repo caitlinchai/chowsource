@@ -17,12 +17,12 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @recipe = @user.recipes.build(recipe_params)
+    # @user = User.find(params[:user_id])
+    @recipe = current_user.recipes.build(recipe_params)
     @categories = Category.all
 
     if @recipe.save
-      redirect_to new_recipe_ingredient_path
+      redirect_to new_recipe_recipe_ingredient_path(@recipe)
     else
       @errors = @recipe.errors.full_messages
       render 'new'

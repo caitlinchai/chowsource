@@ -3,6 +3,7 @@
   <div>
     <ul>
       <li><h3><%= link_to recipe.name, recipe_path(recipe) %></h3></li>
+      <li>posted by <%= link_to recipe.user.name, recipe.user %></li>
       <li><%= recipe.difficulty_level %></li>
       <li><%= recipe.prep_time_hours %> hr. <%= recipe.prep_time_min %> min.</li>
       <li><%= recipe.description %></li>
