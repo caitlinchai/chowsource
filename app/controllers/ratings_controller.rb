@@ -1,13 +1,15 @@
 class RatingsController < ApplicationController
 
   def create
+    @recipe = Recipe.find(params[:recipe_id])
     if logged_in?
-      @recipe = Recipe.find(params[:recipe_id])
+      # @recipe = Recipe.find(params[:recipe_id])
       @rating = Rating.create(recipe_id: @recipe.id, user_id: session[:user_id], stars: params[:value].to_i + 1)
-      redirect_to recipe_path(@recipe)
     else
-      redirect_to '/register'
+      flash[:notice]="You must be logged in to vote."
     end
+    redirect_to recipe_path(@recipe)
+
   end
 
 private
