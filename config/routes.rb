@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/recipes', to: 'recipes#index'
+  get 'update-password', to: 'users#password'
+  patch 'update-password', to: 'users#update_password'
 
   resources :users do
     resources :recipes, shallow: true
