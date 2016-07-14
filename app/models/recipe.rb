@@ -4,7 +4,7 @@ class Recipe < ActiveRecord::Base
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
   has_many :ratings, dependent: :destroy
-  validates :name, :difficulty_level, :prep_time, :directions, presence: true
+  validates :name, :difficulty_level, :directions, presence: true
   validates :description, :creator, :servings, :category, presence: true
 
   DIFFICULTY = ['Beginner', 'Intermediate', 'Expert']

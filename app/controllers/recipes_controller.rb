@@ -9,11 +9,14 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new
+    @user = User.find(params[:user_id])
+    @recipe = @user.recipes.new
+    @categories = Category.all
   end
 
   def create
-    @recipe = Recipe.build(recipe_params)
+    @user = User.find(params[:user_id])
+    @recipe = @user.recipes.build(recipe_params)
     if @recipe.save
       redirect_to @recipe
     else
@@ -28,6 +31,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :difficulty_level, :prep_time, :prep_time_unit, :directions, :description, :creator, :servings)
+    params.require(:recipe).permit(:name, :category_id, :difficulty_level, :prep_time_hours, :prep_time_min, :directions, :description, :creator, :servings)
   end
 end
