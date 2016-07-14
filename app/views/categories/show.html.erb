@@ -1,11 +1,10 @@
-<h2>Recipes</h2>
-
+<h2><%=@category.name.downcase%> recipes</h2>
 <% @recipes.each do |recipe| %>
   <div>
     <ul>
       <li><h3><%= link_to recipe.name, recipe_path(recipe) %></h3></li>
       <li><%= recipe.difficulty_level %></li>
-      <li><%= recipe.prep_time %></li>
+      <li><%= recipe.prep_time_hours %> hr. <%= recipe.prep_time_min %> min.</li>
       <li><%= recipe.description %></li>
     <ul>
   </div>

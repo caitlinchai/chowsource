@@ -4,7 +4,10 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @recipes = Recipe.where( category_id: id_params )
+    @category = Category.find(id_params)
+    @recipes = @category.recipes
+     # Recipe.where( category_id: id_params )
+
   end
 
   private
