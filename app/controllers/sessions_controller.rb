@@ -20,10 +20,4 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 
-private
-
-  def login(user)
-    session[:user_id] = user.id
-  end
-
 end

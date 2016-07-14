@@ -3,7 +3,7 @@
 
   <div>Author: <%= @recipe.creator %></div>
   <div>Level: <%= @recipe.difficulty_level %></div>
-  <div>Preparation Time: <%= @recipe.prep_time %></div>
+  <div>Preparation Time: <%= @recipe.prep_time_hours%> hr. and <%=@recipe.prep_time_min%> min.</div>
   <div>Serves: <%= @recipe.servings %></div>
 
   <h3>Directions</h3>

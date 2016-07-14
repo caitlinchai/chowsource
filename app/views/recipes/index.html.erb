@@ -6,7 +6,7 @@
     <ul>
       <li><h3><%= link_to recipe.name, recipe_path(recipe) %></h3></li>
       <li><%= recipe.difficulty_level %></li>
-      <li><%= recipe.prep_time %></li>
+      <li><%= recipe.prep_time_hours %> hr. and <%=recipe.prep_time_min%> mins.</li>
       <li><%= recipe.description %></li>
     <ul>
   </div>

@@ -1,6 +1,6 @@
 <h2>New Recipe</h2>
 
-<%= form_for @recipe do |f| %>
+<%= form_for [@user, @recipe] do |f| %>
 
   <% if @errors %>
     <div class="alert alert-danger">
@@ -13,8 +13,13 @@
   <% end %>
 
   <p>
-    <%= f.label :name %><br>
+    <%= f.label :name, "Recipe Name" %><br>
     <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
   </p>
 
   <p>
@@ -23,15 +28,15 @@
   </p>
 
   <p>
-    <%= f.label :prep_time_ %><br>
-    <%= f.number_field :prep_time %><br>
-    <%= f.label :prep_time_unit %><br>
-    <%= f.collection_select :prep_time_unit, Recipe::TIME, :to_s, :to_s %>
+    <%= f.label :prep_time_hours %><br>
+    <%= f.number_field :prep_time_hours, min:"0" %><br>
+    <%= f.label :prep_time_min %><br>
+    <%= f.number_field :prep_time_min, min:"0"%>
   </p>
 
   <p>
-    <%= f.label :category %><br>
-    <%= f.collection_select :category, ['Appetizers', 'Soups and Salads'], :to_s, :to_s %>
+    <%= f.label :category_id, "Category" %><br>
+    <%= f.select :category_id, Category.all.map{|c| [c.name, c.id]} =%>
   </p>
 
   <div id="ingredient_list">
@@ -43,10 +48,6 @@
     <%= f.text_area :directions %>
   </p>
 
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
 
   <p>
     <%= f.label :creator %><br>
@@ -55,7 +56,7 @@
 
   <p>
     <%= f.label :servings %><br>
-    <%= f.text_field :servings %>
+    <%= f.number_field :servings, min:"0" %>
   </p>
 
   <p>
