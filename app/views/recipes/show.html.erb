@@ -1,4 +1,6 @@
-<h1><%=@recipe.name %></h1>
+<div class="recipe_show">
+<h1 class="recipe_name"><%=@recipe.name %></h1>
+
   <p><%= @recipe.description %></p>
 
   <div>Author: <%= @recipe.creator %></div>
@@ -8,5 +10,5 @@
 
   <h3>Directions</h3>
   <div><%= @recipe.directions %></div>
-
+</div>
 

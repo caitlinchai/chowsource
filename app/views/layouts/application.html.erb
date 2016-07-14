@@ -7,19 +7,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/application.css'>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav>
-  <%if logged_in?%>
-    <%=link_to "logout", logout_path, method:"delete"%>
-  <%else%>
-    <%=link_to "login", login_path%>
-    <%=link_to "register", register_path%>
-  <%end%>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+      <a href="/" class="navbar-brand">CHOWSOURCE</a>
+  </div> 
+
+
+    <div class="collapse navbar-collapse" id="mainNavBar">
+      <%if logged_in?%>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%=link_to "logout", logout_path, method:"delete"%></li>
+        </ul>
+      <%else%>
+        <ul class="nav navbar-nav">
+          <li><%=link_to "login", login_path%></li>
+          <li><%=link_to "register", register_path%></li>
+        </ul>
+      <%end%>
+    </div>
+  </div>
 </nav>
+
 <%= yield %>
 
 </body>
