@@ -4,8 +4,8 @@ class Recipe < ActiveRecord::Base
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
   has_many :ratings, dependent: :destroy
-  has_attached_file :image, styles: { small: "64x64", med: "100x100", large: "200x200" }
-  # validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  has_attached_file :image
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   validates :name, :difficulty_level, :directions, presence: true
   validates :description, :creator, :servings, :category, presence: true
   validates :category, uniqueness:{scope: [:user, :category], message: "only one recipe per category per user"}

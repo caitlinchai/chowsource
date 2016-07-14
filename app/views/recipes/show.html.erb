@@ -18,7 +18,7 @@
   </div>
     <p>Average Rating: <%= @recipe.average_rating %></p>
     <% if @recipe.image.present? %>
-    <p><%= link_to image_tag(@recipe.image.url(:med)), @post.image.url %></p>
+    <p><%= image_tag(@recipe.image) %></p>
     <% end %>
     <p><%= @recipe.description %></p>
     <div>Author: <%= @recipe.creator %></div>
