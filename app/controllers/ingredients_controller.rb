@@ -9,14 +9,11 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    binding.pry
     @ingredient = Ingredient.new(name_params)
     @ingredient.save
-    # render :'ingredients/create'
   end
 
   def show
-    binding.pry 
   end
 
 private
