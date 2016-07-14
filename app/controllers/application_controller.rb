@@ -8,10 +8,10 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   
   def index
-    @appetizers = Category.find(1).top_five
-    @soups_and_salads = Category.find(2).top_five
-    @main_course = Category.find(3).top_five
-    @dessert = Category.find(4).top_five
+    @appetizers = Category.find(1).top_five.reverse
+    @soups_and_salads = Category.find(2).top_five.reverse
+    @main_course = Category.find(3).top_five.reverse
+    @dessert = Category.find(4).top_five.reverse
   end
 
   def current_user
