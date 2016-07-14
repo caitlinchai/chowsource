@@ -4,8 +4,10 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    if current_user.ratings.where(recipe_id: @recipe.id).present?
-      @current_rating = current_user.ratings.where(recipe_id: @recipe.id).first.stars.to_i
+    if current_user
+      if current_user.ratings.where(recipe_id: @recipe.id).present?
+        @current_rating = current_user.ratings.where(recipe_id: @recipe.id).first.stars.to_i
+      end
     end
   end
 

@@ -1,6 +1,5 @@
 <h2>New Recipe</h2>
-
-<%= form_for [@recipe] do |f| %>
+<%= form_for [@recipe], html: { multipart: true } do |f| %>
 
   <% if @errors %>
     <div class="alert alert-danger">
