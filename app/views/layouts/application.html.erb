@@ -22,13 +22,13 @@
       <span class="icon-bar"></span>
     </button>
       <a href="/" class="navbar-brand">CHOWSOURCE</a>
-  </div> 
+  </div>
 
 
     <div class="collapse navbar-collapse" id="mainNavBar">
       <ul class="nav navbar-nav">
       <%if logged_in?%>
-          <li><%=link_to "add a recipe", new_user_recipe_path(@current_user)%></li>
+          <li><%=link_to "add a recipe", new_recipe_path(@current_user)%></li>
         <ul class="nav navbar-nav navbar-right">
           <li><%=link_to "logout", logout_path, method:"delete"%></li>
         </ul>
