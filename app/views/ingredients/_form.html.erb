@@ -1,6 +1,6 @@
-<%= form_for @ingredient, remote: true, id: "new_ingredient" do |f| %>
+<%= form_for :ingredient, remote: true, id: "new_ingredient", method:"POST" do |f| %>
   <p>
     <%= f.text_field :name %>
-    <%= f.submit value: 'Create Ingredient'%>
+    <%= f.submit value: 'add ingredient'%>
   </p>
 <% end %>
