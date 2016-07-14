@@ -1,4 +1,5 @@
 class IngredientsController < ApplicationController
+
   def index
     @ingredients = Ingredient.all
   end
@@ -8,7 +9,11 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @ingredient = Ingredient.create!(name_params)
+    @ingredient = Ingredient.new(name_params)
+    @ingredient.save
+  end
+
+  def show
   end
 
 private
