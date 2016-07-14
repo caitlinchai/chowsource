@@ -26,7 +26,9 @@
 
 
     <div class="collapse navbar-collapse" id="mainNavBar">
+      <ul class="nav navbar-nav">
       <%if logged_in?%>
+          <li><%=link_to "add a recipe", new_user_recipe_path(@current_user)%></li>
         <ul class="nav navbar-nav navbar-right">
           <li><%=link_to "logout", logout_path, method:"delete"%></li>
         </ul>
@@ -36,6 +38,18 @@
           <li><%=link_to "register", register_path%></li>
         </ul>
       <%end%>
+
+        <li><%=link_to "all recipes", recipes_path%></li>
+        <li class="dropdown-menu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><%=link_to 'Appetizers', category_path(@categories[0])%></li>
+          <li><%=link_to 'Soups and Salads', category_path(@categories[1])%></li>
+          <li><%=link_to 'Main Course', category_path(@categories[2])%></li>
+          <li><%=link_to 'Desserts', category_path(@categories[3])%></li>
+        </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
