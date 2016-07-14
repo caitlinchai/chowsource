@@ -4,7 +4,8 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    if current_user.ratings.where(recipe_id: @recipe.id).present?
+    @ingredients = @recipe.recipe_ingredients
+    if current_user && current_user.ratings.where(recipe_id: @recipe.id).present?
       @current_rating = current_user.ratings.where(recipe_id: @recipe.id).first.stars.to_i
     end
   end
@@ -20,7 +21,6 @@ class RecipesController < ApplicationController
   end
 
   def create
-    # @user = User.find(params[:user_id])
     @recipe = current_user.recipes.build(recipe_params)
     @categories = Category.all
 
@@ -36,6 +36,20 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update_attributes(recipe_params)
+      flash[:notice]="Updated."
+      redirect_to @recipe
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    Recipe.find(params[:id]).destroy
+    redirect_to @user
+  end
   private
 
   def recipe_params
@@ -50,7 +64,8 @@ class RecipesController < ApplicationController
   end
 
   def correct_user
+    @recipe = Recipe.find(params[:id])
     @user = User.find(session[:user_id] )
-    redirect_to(root_url) unless current_user?(@user)
+    redirect_to(root_url) unless current_user== @recipe.user
   end
 end
