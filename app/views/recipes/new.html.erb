@@ -34,7 +34,10 @@
     <%= f.collection_select :category, ['Appetizers', 'Soups and Salads'], :to_s, :to_s %>
   </p>
 
-rails
+  <div id="ingredient_list">
+    <%= link_to "Add Ingredient", new_ingredient_url, id: "new_link", remote: true %>
+  </div>
+
   <p>
     <%= f.label :directions %><br>
     <%= f.text_area :directions %>
