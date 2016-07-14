@@ -5,8 +5,10 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.recipe_ingredients
-    if current_user && current_user.ratings.where(recipe_id: @recipe.id).present?
-      @current_rating = current_user.ratings.where(recipe_id: @recipe.id).first.stars.to_i
+    if current_user
+      if current_user.ratings.where(recipe_id: @recipe.id).present?
+        @current_rating = current_user.ratings.where(recipe_id: @recipe.id).first.stars.to_i
+      end
     end
   end
 
@@ -53,7 +55,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :category_id, :difficulty_level, :prep_time_hours, :prep_time_min, :directions, :description, :creator, :servings)
+    params.require(:recipe).permit(:name, :category_id, :difficulty_level, :prep_time_hours, :prep_time_min, :directions, :description, :creator, :servings, :image)
   end
 
   def logged_in_user
