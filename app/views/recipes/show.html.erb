@@ -15,7 +15,7 @@
     <% end %>
     <p>Thanks for voting!</p>
   <% else %>
-      <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{1}", method: :create %>
+      <%= link_to image_tag("hover_star.png"),recipe_ratings_path(@recipe) + "?value=#{1}", method: :create %>
       <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{2}", method: :create %>
       <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{3}", method: :create %>
       <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{4}", method: :create %>
