@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :logged_in_user, only: [:new, :edit, :update, :destroy, :password]
-  before_action :correct_user, only: [:new, :create, :edit, :destroy]
+  before_action :correct_user, only: [ :edit, :destroy]
 
   def show
     @recipe = Recipe.find(params[:id])
@@ -52,6 +52,11 @@ class RecipesController < ApplicationController
     Recipe.find(params[:id]).destroy
     redirect_to @user
   end
+
+  def search
+    @recipes = Recipe.all
+    @results = PgSearch.multisearch(query_params[:query])
+  end
   private
 
   def recipe_params
@@ -69,5 +74,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @user = User.find(session[:user_id] )
     redirect_to(root_url) unless current_user== @recipe.user
+  end
+
+  def query_params
+    params.permit(:query)
   end
 end

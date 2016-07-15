@@ -4,6 +4,6 @@ class Category < ActiveRecord::Base
   validates :name, presence: true
 
   def top_five
-    self.recipes.sort{ |x, y| y.average_rating <=> x.average_rating }[0..4]
+    self.recipes.sort{ |x, y| y.true_rating <=> x.true_rating }[0..4]
   end
 end

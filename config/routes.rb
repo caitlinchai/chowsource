@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only:[:index, :show]
-
+  get '/search', to: 'recipes#search'
 
   # resources :recipes do
   #   resources :ratings, shallow: true
