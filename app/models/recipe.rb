@@ -5,7 +5,7 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients, through: :recipe_ingredients
   has_many :ratings, dependent: :destroy
   has_attached_file :image, :default_url => 'default.jpg', :path => ':rails_root/public:url'
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/, allow_nil: true
   validates :name, :difficulty_level, :directions, presence: true
   validates :description, :creator, :servings, :category, presence: true
   validates :category, uniqueness:{scope: [:user, :category], message: " - you may only one post one recipe per category."}
