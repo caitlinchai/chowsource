@@ -8,11 +8,23 @@
 	margin: 0 auto;
 }
 
-.recipe_name { 
+h3 { 
 	text-align: center;
 	background-image: url(/app/assets/images/grid_paper.jpeg)
 }
+
 .recipes-container{
   width: 60%;
+  margin:auto
+}
+
+.recipe{
+  border: 1px solid grey;
+  padding:20px;
+  margin: 20px;
+}
+
+.description{
+  padding: 20px;
   margin:auto
 }

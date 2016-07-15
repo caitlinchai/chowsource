@@ -3,9 +3,9 @@
   <% @recipes.each do |recipe| %>
     <div class="recipe">
         <div><h3><%= link_to recipe.name, recipe_path(recipe) %></h3></div>
-        <div><%= recipe.difficulty_level %></div>
-        <div><%= recipe.prep_time_hours %> hr. and <%=recipe.prep_time_min%> mins.</div>
-        <div><%= recipe.description %></div>
+        <div class="description"><%= recipe.description %></div>
+        <div>Level: <%= recipe.difficulty_level %></div>
+        <div>Preparation Time: <%= recipe.prep_time_hours %> hr. and <%=recipe.prep_time_min%> mins.</div>
     </div>
   <% end %>
 </div>
