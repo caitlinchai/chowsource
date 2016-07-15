@@ -51,9 +51,10 @@ class RecipeIngredientsController < ApplicationController
   end
 
   def correct_user
-    @recipe = Recipe.find(params[:recipe_id])
-    @user = User.find(session[:user_id] )
-    redirect_to(root_url) unless current_user== @recipe.user
+    recipe_ingredient = RecipeIngredient.find(params[:id])
+    recipe = Recipe.find(params[:recipe_id])
+    user = User.find(session[:user_id] )
+    redirect_to(root_url) unless current_user== recipe.user
   end
 
 
