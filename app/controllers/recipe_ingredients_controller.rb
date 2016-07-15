@@ -55,12 +55,6 @@ class RecipeIngredientsController < ApplicationController
     end
   end
 
-  # def correct_user
-  #   recipes = Recipe.where(user_id: current_user.id)
-  #   recipe = Recipe.find(params[:recipe_id])
-  #   redirect_to(root_url) unless recipes.find(recipe.id)
-  # end
-
   def auth_user
     recipe_ingredient= RecipeIngredient.find(params[:id])
     @recipe = recipe_ingredient.recipe
