@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :ratings, only: [:create, :new]
   end
 
+  resources :recipe_ingredients, only: [:edit, :update, :destroy]
   resources :categories, only:[:index, :show]
   get '/search', to: 'recipes#search'
 

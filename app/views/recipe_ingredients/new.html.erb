@@ -1,9 +1,12 @@
-
 <% if @recipe.recipe_ingredients.count > 0 %>
   <ul><% @recipe.recipe_ingredients.each do |item| %>
     <li><%= item.quantity %>
     <%= item.measurement.name %>
-    <%= item.ingredient.name %></li>
+    <%= item.ingredient.name %>
+    <%= link_to "edit", edit_recipe_ingredient_path(item)%>
+    <%= link_to "delete", item, method: :delete %>
+
+    </li>
   <% end %></ul>
 <% end %>
 

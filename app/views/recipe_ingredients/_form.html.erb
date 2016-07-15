@@ -3,11 +3,12 @@
   <%=text_field_tag :ingredient%>
 
 
-  <%= label_tag :measurement_id, "unit" %>
-  <%= select_tag(:measurement_id, options_for_select(Measurement.all.map{|m| [m.name, m.id]}))%>
-
   <%=label_tag :quantity%>
   <%=text_field_tag :quantity%>
+
+
+  <%= label_tag :measurement_id, "unit" %>
+  <%= select_tag(:measurement_id, options_for_select(Measurement.all.map{|m| [m.name, m.id]}))%>
 
   <%=submit_tag "add ingredient"%>
 <% end %>
