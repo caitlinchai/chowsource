@@ -4,7 +4,7 @@ class Recipe < ActiveRecord::Base
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
   has_many :ratings, dependent: :destroy
-  has_attached_file :image, :styles => { :small => "300x300>" }, :default_url => "/assets/images/default.jpg", :path => ':rails_root/public:url'
+  has_attached_file :image, :styles => { :small => "300x300>" }, :default_url => "/assets/default.jpg", :path => ':rails_root/public:url'
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/, allow_nil: true
   validates :name, :difficulty_level, :directions, presence: true
   validates :description, :creator, :servings, :category, presence: true
