@@ -1,10 +1,15 @@
 class RecipeIngredientsController < ApplicationController
-#   before_action :correct_user, only: [ :new, :edit, :update, :destroy]
+    before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+    before_action :auth_user, only: [:edit, :update, :destroy]
 
   def new
-    @recipe_ingredient = RecipeIngredient.new
-    @ingredient = Ingredient.new
-    @recipe = Recipe.find(params[:recipe_id])
+      @recipe = Recipe.find(params[:recipe_id])
+    if current_user == @recipe.user
+      @recipe_ingredient = RecipeIngredient.new
+      @ingredient = Ingredient.new
+    else
+      redirect_to root_url
+    end
   end
 
   def create
@@ -35,9 +40,9 @@ class RecipeIngredientsController < ApplicationController
   end
 
   def destroy
-    ing = RecipeIngredient.find(params[:id])
-    @recipe = ing.recipe
-    ing.destroy
+    ingre = RecipeIngredient.find(params[:id])
+    @recipe = ingre.recipe
+    ingre.destroy
     redirect_to new_recipe_recipe_ingredient_path(@recipe)
   end
 
@@ -50,11 +55,16 @@ class RecipeIngredientsController < ApplicationController
     end
   end
 
-  def correct_user
-    # recipe_ingredient = RecipeIngredient.find(params[:id])
-    recipe = Recipe.find(params[:recipe_id])
-    user = User.find(session[:user_id] )
-    redirect_to(root_url) unless current_user== recipe.user
+  # def correct_user
+  #   recipes = Recipe.where(user_id: current_user.id)
+  #   recipe = Recipe.find(params[:recipe_id])
+  #   redirect_to(root_url) unless recipes.find(recipe.id)
+  # end
+
+  def auth_user
+    recipe_ingredient= RecipeIngredient.find(params[:id])
+    @recipe = recipe_ingredient.recipe
+    redirect_to(root_url) unless @recipe.user_id == current_user.id
   end
 
 
