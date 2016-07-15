@@ -10,7 +10,15 @@ User.create({name: "Caitlin", password: "password", email: "blank3@blank.com", l
 User.create({name: "Ron", password: "password", email: "blank4@blank.com", location: "Boston, Massachusetts", about: "Avid cook. I eat a tonne of meat every year."})
 User.create({name: "Chet", password: "password", email: "blank5@blank.com", location: "Philadelphia, Pennsylvania", about: "I love this website. I collect recipes as a hobby."})
 User.create({name: "Joe", password: "password", email: "blank6@blank.com", location: "Boston, Massachusetts", about: "I can't wait to try all these recipes out."})
-User.create({name: "Matt", password: "password", email: "blank6@blank.com", location: "Philadelphia, Pennsylvania", about: "I can't cook, so I'm looking forward to using this site."})
+User.create({name: "Matt", password: "password", email: "blank7@blank.com", location: "Philadelphia, Pennsylvania", about: "I can't cook, so I'm looking forward to using this site."})
+User.create({name: "Linsey", password: "password", email: "blank8@blank.com", location: "Houma, Louisiana", about: "My favorite food is pizza."})
+User.create({name: "Brandony", password: "password", email: "blank9@blank.com", location: "New York, New York", about: "I like all kinds of food. Please rate my recipes."})
+User.create({name: "Caitliny", password: "password", email: "blank10@blank.com", location: "Seattle, Washington", about: "I like this website because it is about food."})
+User.create({name: "Rony", password: "password", email: "blank11@blank.com", location: "Boston, Massachusetts", about: "Avid cook. I eat a tonne of meat every year."})
+User.create({name: "Chety", password: "password", email: "blank12@blank.com", location: "Philadelphia, Pennsylvania", about: "I love this website. I collect recipes as a hobby."})
+User.create({name: "Joey", password: "password", email: "blank13@blank.com", location: "Boston, Massachusetts", about: "I can't wait to try all these recipes out."})
+User.create({name: "Matty", password: "password", email: "blank14@blank.com", location: "Philadelphia, Pennsylvania", about: "I can't cook, so I'm looking forward to using this site."})
+
 
 Ingredient.create(name: "Salt")
 Ingredient.create(name: "Pepper")
