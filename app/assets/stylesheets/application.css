@@ -18,9 +18,67 @@
 	height: 200px;
 	width: 300px;
 	margin: 0 auto;
+	padding-top: 15px;
 }
 
 .recipe_name { 
 	text-align: center;
-	background-image: url(/app/assets/images/grid_paper.jpeg)
+}
+
+.menu_head {
+	text-align: center;
+	padding-top: 20px;
+	font-family: cursive;
+	font-size: 45px;
+}
+
+.title {
+	font-family: cursive;
+	font-size: 65px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 29px;
+	background-color: #c5c5c0;
+}
+
+.subtitle {
+	font-family: Verdana;
+	font-size: 20px;
+	text-align: center;
+}
+
+.appetizers {
+	float: left;
+	width: 25%
+}
+
+.soup_and_salads{
+	float: left;
+	width: 25%
+}
+
+.main_course {
+	float: left;
+	width: 25%
+}
+
+.dessert{
+	float: left;
+	width: 25%
+}
+
+.contain {
+	padding: 10px;
+	padding-top: 50px;
+	text-align: center;
+}
+
+.homepage_categories {
+	font-size: 30px;
+	padding-bottom: 20px;
+}
+
+.text_format {
+	letter-spacing: 1.2px;
 }

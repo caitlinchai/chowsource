@@ -1,7 +1,5 @@
 
 
-<%= will_paginate @recipes %>
-
 <% if @recipe.recipe_ingredients.count > 0 %>
   <ul><% @recipe.recipe_ingredients.each do |item| %>
     <li><%= item.quantity %>
