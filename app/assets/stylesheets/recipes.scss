@@ -8,7 +8,7 @@
 	margin: 0 auto;
 }
 
-h3 { 
+h3 {
 	text-align: center;
 	background-image: url(/app/assets/images/grid_paper.jpeg)
 }
@@ -27,4 +27,19 @@ h3 {
 .description{
   padding: 20px;
   margin:auto
+}
+
+.btn{
+  border:1px solid grey;
+  padding:5px;
+  margin: 20px;
+}
+
+.btn:hover{
+  background-color:grey;
+}
+
+.btn-container{
+  margin: auto;
+  text-align:center;
 }
