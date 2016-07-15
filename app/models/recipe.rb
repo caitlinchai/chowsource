@@ -8,7 +8,7 @@ class Recipe < ActiveRecord::Base
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   validates :name, :difficulty_level, :directions, presence: true
   validates :description, :creator, :servings, :category, presence: true
-  validates :category, uniqueness:{scope: [:user, :category], message: "only one recipe per category per user"}
+  validates :category, uniqueness:{scope: [:user, :category], message: " - you may only one post one recipe per category."}
 
   DIFFICULTY = ['Beginner', 'Intermediate', 'Expert']
   TIME = ['minutes', 'hours']

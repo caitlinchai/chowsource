@@ -1,13 +1,7 @@
 <%= form_for [@recipe] do |f| %>
 
   <% if @errors %>
-    <div class="alert alert-danger">
-      <ul>
-        <% @errors.each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    </div>
+    <%= render 'shared/error_messages', object: f.object %>
   <% end %>
 
   <p>

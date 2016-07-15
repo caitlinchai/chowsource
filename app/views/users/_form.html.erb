@@ -1,10 +1,5 @@
 <%= form_for(@user) do |f| %>
-
-  <% if @user.errors.any?%>
-    <%@user.errors.full_messages.each do |msg| %>
-      <li><%=msg%></li>
-    <%end%>
-  <%end%>
+  <%= render 'shared/error_messages', object: f.object %>
 
   <div>
     <%= f.label :name, "name: "%>
@@ -26,13 +21,13 @@
     <%= f.text_field :location %>
   </div>
 
+  <% if !@current_user%>
+
    <div>
     <%= f.label :password, "password: " %>
     <%= f.password_field :password %>
   </div>
-
-  <% if !@current_user%>
-
+  
     <div>
       <%= f.label :password_confirmation, "re-enter password:" %>
       <%= f.password_field :password_confirmation %>
