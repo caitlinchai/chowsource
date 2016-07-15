@@ -43,4 +43,9 @@ $(document).ready ->
     $('.star2').attr 'src', '/assets/star.png'
     $('.star1').attr 'src', '/assets/star.png'
     return
-  return
+  $('.star1').mouseover ->
+    $('.star1').attr 'src', '/assets/hover_star.png'
+    return
+  $('.star1').mouseout ->
+    $('.star1').attr 'src', '/assets/star.png'
+    return
