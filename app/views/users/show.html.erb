@@ -1,14 +1,41 @@
-<%if flash[:notice]%>
-  <div class="notice"><%=flash[:notice]%></div>
-<%end%>
 
-<h1><%=@user.name%></h1>
-<p><%=@user.location%></p>
-<h3>About</h3>
-<p><%=@user.about%></p>
 
-<h3>Recipes</h3>
-<%@recipes.each do |recipe|%>
-  <%=link_to recipe.name, recipe%>
-  <p>added <%= time_ago_in_words(recipe.created_at) %> ago.</p>
-<%end%>
+<div class="user_contain">
+
+  <%if flash[:notice]%>
+    <div class="notice"><%=flash[:notice]%></div>
+  <%end%>
+
+  <% if current_user == @user %>
+      <h1 class="user_name">Welcome <%=@user.name%></h1>
+    <% else %>
+      <h1 class="user_name"><%=@user.name%></h1>
+  <% end %>
+
+  <span class="user_loc"><%=@user.location%></span><br>
+  <span class="user_loc">Total Recipes: <%=@user.recipes.length%></span>
+
+
+    <h3 class="about_me_head">About Me</h3>
+    <div class="center"><aside class="about_me"><%=@user.about%></aside></div>
+
+
+  <div class="recipe_bot">
+    <h3 class="user_recipe_header">Recipes</h3>
+
+    <div class="recipe_profile">
+      <%@recipes.each do |recipe|%>
+        <aside class="recipe_contain">
+              <%=link_to recipe.name, recipe%><br>
+              added <%= time_ago_in_words(recipe.created_at) %> ago<br>
+              Prep Time: <%= recipe.prep_time_hours%> hr. and <%=recipe.prep_time_min%> min. <br>
+              Serves: <%= recipe.servings %><br>
+              <%= recipe.description[0..50] %> . . .
+        </aside>
+      <%end%>
+    </div>
+  </div>
+
+</div>
+
+

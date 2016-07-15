@@ -1,3 +1,59 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user_contain {
+  text-align: center;
+  padding-top: 20px;
+  background-color: pink;
+}
+
+
+.recipe_contain {
+  width: 25%;
+  float: left;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.about_me {
+  width: 100%;
+  padding:20px;
+  word-wrap: break-word;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.about_me_head {
+  font-size: 35px;
+  font-family: Verdana;
+}
+.user_recipe_header {
+  font-size: 35px;
+  font-family: Verdana;
+}
+
+.user_loc {
+  font-size: 20px;
+}
+
+.user_name {
+  font-family: cursive;
+  font-size: 60px;
+}
+
+.center {
+  text-align: center;
+}
+
+.recipe_bot {
+  background-color: #F6F6EF;
+  height: 300%;
+}
+
+.recipe_profile {
+  background-color: #F6F6EF;
+  height: 300px;
+}
+
