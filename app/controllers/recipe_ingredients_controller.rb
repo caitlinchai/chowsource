@@ -16,9 +16,38 @@ class RecipeIngredientsController < ApplicationController
     render 'new'
   end
 
+  def edit
+    @recipe_ingredient= RecipeIngredient.find(params[:id])
+    @recipe = @recipe_ingredient.recipe
+  end
+
+  def update
+    @recipe_ingredient= RecipeIngredient.find(params[:id])
+    @recipe = @recipe_ingredient.recipe
+    @ingredient = Ingredient.find_or_create_by(name: ingredient_params[:ingredient])
+
+    if @recipe_ingredient.update_attributes(ingredient_id: @ingredient.id) && @recipe_ingredient.update_attributes(updated_params)
+      redirect_to new_recipe_recipe_ingredient_path(@recipe)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    ing = RecipeIngredient.find(params[:id])
+    @recipe = ing.recipe
+    ing.destroy
+    redirect_to new_recipe_recipe_ingredient_path(@recipe)
+  end
+
   private
 
   def ingredient_params
     params.permit(:ingredient, :measurement_id, :quantity, :recipe_id)
   end
+
+  def updated_params
+    params.permit(:measurement_id, :quantity, :recipe_id)
+  end
+
 end

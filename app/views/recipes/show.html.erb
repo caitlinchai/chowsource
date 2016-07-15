@@ -1,7 +1,6 @@
 <div class="recipe_show">
   <%if flash[:notice]%>
     <div class="notice"><%=flash[:notice]%></div>
-    <%=link_to "Login", login_path%>
   <%end%>
 
   <h1 class="recipe_name"><%=@recipe.name %></h1>
@@ -34,9 +33,11 @@
     <div>Serves: <%= @recipe.servings %></div>
     <div><h3>ingredients</h3>
       <% @ingredients.each do |item| %>
+      <div>
         <%= item.quantity%>
         <%= item.measurement.name%>
         <%= item.ingredient.name%>
+      </div>
       <% end %>
     </div>
     <h3>Directions</h3>

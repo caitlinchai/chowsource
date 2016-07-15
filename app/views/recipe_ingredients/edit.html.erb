@@ -1,1 +1,17 @@
+<%= form_tag(recipe_ingredient_path, method: :put) do %>
+  <%=label_tag :ingredient%>
+  <%=text_field_tag :ingredient, @recipe_ingredient.ingredient.name%>
+
+
+  <%= label_tag :measurement_id, "unit" %>
+  <%= select_tag(:measurement_id, options_for_select(Measurement.all.map{|m| [m.name, m.id]}, @recipe_ingredient.measurement_id))%>
+
+  <%=label_tag :quantity%>
+  <%=text_field_tag :quantity, @recipe_ingredient.quantity%>
+
+  <%=submit_tag "update ingredient"%>
+<% end %>
+
+<%= link_to 'Done', recipe_path(@recipe) %>
+
 
