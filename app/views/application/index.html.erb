@@ -1,26 +1,38 @@
 
 <div class="center">
-	<h1 class="title">CHOWSOURCE</h1>
-	<h2 class="hours_locations">hours: 6am - 12pm, location: 123 Wall Street, New York</h2>
+	<h1 class="title">ChowSource</h1>
+	<h2 class="subtitle">48 Wall Street, New York, NY 10043</h2>
 
-	<h2 class="full_menu_header">today's menu</h2>
+	<h2 class="menu_head">Menu</h2>
 </div>
-<h3 class="homepage_categories">appetizers</h3>
-<% @appetizers.each do |recipe| %>
-  <%= link_to recipe.name, recipe_path(recipe) %><br>
-<% end %>
 
-<h3 class="homepage_categories">soup and salad</h3>
-<% @soups_and_salads.each do |recipe| %>
-  <%= link_to recipe.name, recipe_path(recipe) %><br>
-<% end %>
+<div class="contain">
+	<aside class="appetizers">
+		<h3 class="homepage_categories">Appetizers</h3>
+		<div class="text_format"><% @appetizers.each do |recipe| %>
+		  <%= link_to recipe.name, recipe_path(recipe) %><br>
+		<% end %></div>
+	</aside>
 
-<h3 class="homepage_categories">main course</h3>
-<% @main_course.each do |recipe| %>
-  <%= link_to recipe.name, recipe_path(recipe) %><br>
-<% end %>
+	<aside class="soup_and_salads">
+		<h3 class="homepage_categories">Soups and Salads</h3>
+		<div class="text_format"><% @soups_and_salads.each do |recipe| %>
+		  <%= link_to recipe.name, recipe_path(recipe) %><br>
+		<% end %></div >
+	</aside>
 
-<h3 class="homepage_categories">dessert</h3><br>
-<% @dessert.each do |recipe| %>
-  <%= link_to recipe.name, recipe_path(recipe) %><br>
-<% end %>
+	<aside class="main_course">
+		<h3 class="homepage_categories">Main Course</h3>
+		<div class="text_format"><% @main_course.each do |recipe| %>
+		  <%= link_to recipe.name, recipe_path(recipe) %><br>
+		<% end %></div >
+	</aside>
+
+	<aside class="dessert">
+		<h3 class="homepage_categories">Dessert</h3><br>
+		<div class="text_format"><% @dessert.each do |recipe| %>
+		  <%= link_to recipe.name, recipe_path(recipe) %><br>
+		<% end %></div>
+	</aside>
+
+</div>
