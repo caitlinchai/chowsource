@@ -29,6 +29,7 @@ Ingredient.create(name: "Ham")
 Ingredient.create(name: "Olives")
 Ingredient.create(name: "Parsley")
 
+Measurement.create(name: " ")
 Measurement.create(name: 'c.')
 Measurement.create(name: 'g.')
 Measurement.create(name: 'kg.')
@@ -40,7 +41,7 @@ Measurement.create(name: 'oz.')
 Measurement.create(name: 'pkg.')
 Measurement.create(name: 'tsp.')
 Measurement.create(name: 'tbsp.')
-Measurement.create(name: " ")
+
 
 Recipe.create({name: "10-Minute Energizing Oatmeal", difficulty_level: "Expert", prep_time_hours: 0, prep_time_min: 5, directions: "Bring the water and salt to a boil in a saucepan, then turn the heat to low and add the oats. Cook for about 5 minutes, stirring regularly so that the oatmeal will not clump together. Add cinnamon, raisins and almonds, stir, cover the pan and turn off heat. Let sit for 5 minutes. Serve with milk and sweetener.", description: "This is a delicious complete breakfast and a perfect way to start your day!", creator: "Grandma", servings: 4, category_id: 1, user_id: 1})
 
