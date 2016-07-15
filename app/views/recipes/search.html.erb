@@ -1,0 +1,10 @@
+
+
+
+<ul><% @results.each do |recipe| %>
+  <li>
+    <% binding.pry %>
+    <% @recipes.find(recipe.searchable_id).name %>
+    <%= @recipes.find(recipe.searchable_id).description %>
+  </li>
+<% end %></ul>

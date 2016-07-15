@@ -10,17 +10,24 @@ class Recipe < ActiveRecord::Base
   validates :description, :creator, :servings, :category, presence: true
   validates :category, uniqueness:{scope: [:user, :category], message: "only one recipe per category per user"}
 
-  include PgSearch
-  multisearchable :against => [:name, :directions]
   DIFFICULTY = ['Beginner', 'Intermediate', 'Expert']
   TIME = ['minutes', 'hours']
 
+
   def average_rating
-    # binding.pry
     if self.ratings(:stars).empty?
       return 0
     else
       return self.ratings.average(:stars).round(2).to_f
     end
   end
+
+  def true_rating
+    if Rating.all.length/5 <= self.ratings.length
+      return self.ratings.average(:stars).round(2).to_f
+    else
+      return 0
+    end
+  end
+
 end
