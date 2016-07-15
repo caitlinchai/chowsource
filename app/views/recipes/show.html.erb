@@ -2,7 +2,7 @@
   <%if flash[:notice]%>
     <div class="notice"><%=flash[:notice]%></div>
   <%end%>
-
+  <h3><%=@recipe.category.name%></h3>
   <h1 class="recipe_name"><%=@recipe.name %></h1>
 
   <div class="stars">

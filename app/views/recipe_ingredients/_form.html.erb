@@ -1,4 +1,8 @@
 <%= form_tag(recipe_recipe_ingredients_path) do %>
+
+    <%= render 'shared/error_messages', object: @ingredient %>
+    <%= render 'shared/error_messages', object: @recipe_ingredient %>
+
   <%=label_tag :ingredient%>
   <%=text_field_tag :ingredient%>
 
