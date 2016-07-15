@@ -1,14 +1,14 @@
 <%= will_paginate @recipes %>
 
-<h2><%=@category.name.downcase%> recipes</h2>
-<% @recipes.each do |recipe| %>
-  <div>
-    <ul>
-      <li><h3><%= link_to recipe.name, recipe_path(recipe) %></h3></li>
-      <li>posted by <%= link_to recipe.user.name, user_path(recipe.user) %></li>
-      <li><%= recipe.difficulty_level %></li>
-      <li><%= recipe.prep_time_hours %> hr. <%= recipe.prep_time_min %> min.</li>
-      <li><%= recipe.description %></li>
-    <ul>
-  </div>
-<% end %>
+<div class="category-container">
+  <h2><%=@category.name.downcase%></h2>
+  <% @recipes.each do |recipe| %>
+    <div class="recipe-container">
+        <div><h3><%= link_to recipe.name, recipe_path(recipe) %></h3></div>
+        <div>posted by <%= link_to recipe.user.name, user_path(recipe.user) %></div>
+        <div class="description"><%= recipe.description %></div>
+        <div><%= recipe.difficulty_level %></div>
+        <div><%= recipe.prep_time_hours %> hr. <%= recipe.prep_time_min %> min.</div>
+    </div>
+  <% end %>
+</div>
