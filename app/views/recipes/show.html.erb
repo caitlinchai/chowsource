@@ -25,7 +25,7 @@
   </div>
     <p>Average Rating: <%= @recipe.average_rating %> By <%= @recipe.ratings.count %> Members.</p>
     <% if @recipe.image.present? %>
-    <p><%= image_tag(@recipe.image) %></p>
+    <p><%= image_tag(@recipe.image, size: "300x300") %></p>
     <% end %>
     <p><%= @recipe.description %></p>
     <div>Author: <%= @recipe.creator %></div>
