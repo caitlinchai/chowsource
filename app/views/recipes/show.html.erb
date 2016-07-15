@@ -1,8 +1,9 @@
 <div class="recipe_show">
   <%if flash[:notice]%>
     <div class="notice"><%=flash[:notice]%></div>
+    <%=link_to "Login", login_path%>
   <%end%>
-  <h3><%=@recipe.category.name%></h3>
+
   <h1 class="recipe_name"><%=@recipe.name %></h1>
 
   <div class="stars">
@@ -15,11 +16,11 @@
     <% end %>
     <p>Thanks for voting!</p>
   <% else %>
-      <%= link_to image_tag("hover_star.png"),recipe_ratings_path(@recipe) + "?value=#{1}", method: :create %>
-      <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{2}", method: :create %>
-      <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{3}", method: :create %>
-      <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{4}", method: :create %>
-      <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{5}", method: :create %>
+      <%= link_to image_tag("star.png", class: "star1"),recipe_ratings_path(@recipe) + "?value=#{1}", method: :create %>
+      <%= link_to image_tag("star.png", class: "star2"),recipe_ratings_path(@recipe) + "?value=#{2}", method: :create %>
+      <%= link_to image_tag("star.png", class: "star3"),recipe_ratings_path(@recipe) + "?value=#{3}", method: :create %>
+      <%= link_to image_tag("star.png", class: "star4"),recipe_ratings_path(@recipe) + "?value=#{4}", method: :create %>
+      <%= link_to image_tag("star.png", class: "star5"),recipe_ratings_path(@recipe) + "?value=#{5}", method: :create %>
   <% end %>
   </div>
     <p>Average Rating: <%= @recipe.average_rating %> By <%= @recipe.ratings.count %> Members.</p>
@@ -33,11 +34,9 @@
     <div>Serves: <%= @recipe.servings %></div>
     <div><h3>ingredients</h3>
       <% @ingredients.each do |item| %>
-      <div>
         <%= item.quantity%>
         <%= item.measurement.name%>
         <%= item.ingredient.name%>
-      </div>
       <% end %>
     </div>
     <h3>Directions</h3>
