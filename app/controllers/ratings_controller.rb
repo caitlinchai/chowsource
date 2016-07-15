@@ -8,8 +8,8 @@ class RatingsController < ApplicationController
       redirect_to recipe_path(@recipe)
     else
       flash[:notice]="You must be logged in to vote."
+      redirect_to recipe_path(@recipe)
     end
-    redirect_to recipe_path(@recipe)
 
   end
 
