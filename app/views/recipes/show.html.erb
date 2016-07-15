@@ -23,7 +23,7 @@
       <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{5}", method: :create %>
   <% end %>
   </div>
-    <p>Average Rating: <%= @recipe.average_rating %></p>
+    <p>Average Rating: <%= @recipe.average_rating %> By <%= @recipe.ratings.count %> Members.</p>
     <% if @recipe.image.present? %>
     <p><%= image_tag(@recipe.image) %></p>
     <% end %>
