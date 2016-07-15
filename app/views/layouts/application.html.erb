@@ -29,6 +29,7 @@
       <ul class="nav navbar-nav">
         <%if logged_in?%>
             <li><%=link_to "add a recipe", new_recipe_path%></li>
+            <li><%=link_to current_user.name, current_user%></li>
           <ul class="nav navbar-nav navbar-right">
             <li><%=link_to "logout", logout_path, method:"delete"%></li>
           </ul>

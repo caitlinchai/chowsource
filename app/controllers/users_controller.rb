@@ -51,6 +51,7 @@ class UsersController < ApplicationController
 
   def update_password
     @user = current_user
+
     if @user.authenticate(params[:user][:current_password]) && @user.update_attributes(user_params)
       flash[:notice]="Password changed."
       redirect_to @user
@@ -70,7 +71,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :about, :location)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :about, :location)
   end
 
   def logged_in_user
