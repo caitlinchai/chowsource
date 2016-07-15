@@ -1,5 +1,5 @@
 class RecipeIngredientsController < ApplicationController
-  before_action :correct_user, only: [ :new, :edit, :update, :destroy]
+#   before_action :correct_user, only: [ :new, :edit, :update, :destroy]
 
   def new
     @recipe_ingredient = RecipeIngredient.new
@@ -51,7 +51,7 @@ class RecipeIngredientsController < ApplicationController
   end
 
   def correct_user
-    recipe_ingredient = RecipeIngredient.find(params[:id])
+    # recipe_ingredient = RecipeIngredient.find(params[:id])
     recipe = Recipe.find(params[:recipe_id])
     user = User.find(session[:user_id] )
     redirect_to(root_url) unless current_user== recipe.user
