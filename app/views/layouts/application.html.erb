@@ -42,9 +42,17 @@
                 <li><%=link_to 'Desserts', category_path(@categories[3])%></li>
               </ul>
             </li>
-          </ul> 
+          </ul>
+
+
 
            <ul class="nav navbar-nav navbar-right">
+            <li class="search-form">
+              <%= form_tag("/search", method: "get") do %>
+                   <%= text_field_tag(:search)%>
+                <%= submit_tag("Search") %>
+              <% end %>
+            </li>
             <li><%=link_to "Profile", user_path(current_user), method:"get"%></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setting <span class="caret"></span></a>
@@ -55,11 +63,12 @@
               </ul>
             </li>
             <li class="nav navbar-nav navbar-right"><%=link_to "Logout", logout_path, method:"delete"%></li>
+
           </ul>
 
         <%else%>
           <ul class="nav navbar-nav">
-            <li><%=link_to 'Home', root_path%></li> 
+            <li><%=link_to 'Home', root_path%></li>
             <li><%=link_to "All Recipes", recipes_path%></li>
 
             <li class="dropdown">
@@ -72,12 +81,18 @@
               </ul>
             </li>
            </ul>
-           
+
            <ul class="nav navbar-nav navbar-right">
+             <li class="search-form">
+              <%= form_tag("/search", method: "get") do %>
+                   <%= text_field_tag(:search)%>
+                <%= submit_tag("Search") %>
+              <% end %>
+            </li>
              <li><%=link_to "Login", login_path%><li>
              <li><%=link_to "Register", register_path%></li>
            </ul>
-          
+
         <%end%>
 
 

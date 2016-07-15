@@ -1,0 +1,15 @@
+<div class="search-form">
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:search, "Search for:") %>
+    <%= text_field_tag(:search)%>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+<span class="search"><%= @recipes.length%> recipe results for</span> "<span><%= @query %></span>"
+
+<h5>Recipes</h5>
+<div>
+  <% @recipes.each do |recipe| %>
+    <li><%= link_to recipe.name, recipe_path(recipe) %></li>
+  <% end %>
+</div>

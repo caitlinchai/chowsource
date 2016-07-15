@@ -53,10 +53,6 @@ class RecipesController < ApplicationController
     redirect_to @user
   end
 
-  def search
-    @recipes = Recipe.all
-    @results = PgSearch.multisearch(query_params[:query])
-  end
   private
 
   def recipe_params
