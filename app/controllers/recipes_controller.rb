@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.paginate(:per_page => 5, :page => params[:page]).order('created_at DESC')
   end
 
   def new

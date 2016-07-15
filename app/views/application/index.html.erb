@@ -10,28 +10,28 @@
 	<aside class="appetizers">
 		<h3 class="homepage_categories">Appetizers</h3>
 		<div class="text_format"><% @appetizers.each do |recipe| %>
-		  <%= link_to recipe.name, recipe_path(recipe) %><br>
+		  <%= link_to recipe.name, recipe_path(recipe) %><br><br>
 		<% end %></div>
 	</aside>
 
 	<aside class="soup_and_salads">
 		<h3 class="homepage_categories">Soups and Salads</h3>
 		<div class="text_format"><% @soups_and_salads.each do |recipe| %>
-		  <%= link_to recipe.name, recipe_path(recipe) %><br>
+		  <%= link_to recipe.name, recipe_path(recipe) %><br><br>
 		<% end %></div >
 	</aside>
 
 	<aside class="main_course">
 		<h3 class="homepage_categories">Main Course</h3>
 		<div class="text_format"><% @main_course.each do |recipe| %>
-		  <%= link_to recipe.name, recipe_path(recipe) %><br>
+		  <%= link_to recipe.name, recipe_path(recipe) %><br><br>
 		<% end %></div >
 	</aside>
 
 	<aside class="dessert">
 		<h3 class="homepage_categories">Dessert</h3><br>
 		<div class="text_format"><% @dessert.each do |recipe| %>
-		  <%= link_to recipe.name, recipe_path(recipe) %><br>
+		  <%= link_to recipe.name, recipe_path(recipe) %><br><br>
 		<% end %></div>
 	</aside>
 
