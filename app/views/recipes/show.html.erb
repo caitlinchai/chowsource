@@ -16,9 +16,11 @@
     <% end %>
     <p>Thanks for voting!</p>
   <% else %>
-    <% 5.times do |star_value| %>
-      <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{star_value}", method: :create %>
-    <% end %>
+      <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{1}", method: :create %>
+      <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{2}", method: :create %>
+      <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{3}", method: :create %>
+      <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{4}", method: :create %>
+      <%= link_to image_tag("star.png", onmouseover: "this.src='#{asset_path('hover_star.png')}'", onmouseout: "this.src='#{asset_path('star.png')}'"),recipe_ratings_path(@recipe) + "?value=#{5}", method: :create %>
   <% end %>
   </div>
     <p>Average Rating: <%= @recipe.average_rating %></p>
