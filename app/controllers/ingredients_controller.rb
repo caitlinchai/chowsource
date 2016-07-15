@@ -1,28 +1,26 @@
 class IngredientsController < ApplicationController
 
-  def index
-    @ingredients = Ingredient.all
-  end
+  # def index
+  #   @ingredients = Ingredient.all
 
-  def new
-    @ingredient = Ingredient.new
-     @recipe = Recipe.find(params[:recipe_id])
-  end
+  # end
 
-  def create
+  # def new
+  #   @ingredient = Ingredient.new
+  #    @recipe = Recipe.find(params[:recipe_id])
+  # end
 
-    @ingredient = Ingredient.new(name_params)
-    @ingredient.save
-    render 'new'
-  end
+  # def create
+
+  #   @ingredient = Ingredient.new(name_params)
+  #   @ingredient.save
+  #   render 'new'
+  # end
 
   def show
+    @ingredients = RecipeIngredient.where(ingredient_id: params[:id])
+    r
   end
 
-private
-
-def name_params
-  params.require(:ingredient).permit(:name)
-end
 
 end

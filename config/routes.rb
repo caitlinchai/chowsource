@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get 'update-password', to: 'users#password'
   patch 'update-password', to: 'users#update_password'
+  get '/search', to: 'searches#query'
 
   resources :users, except:[:new]
 
@@ -17,8 +18,8 @@ Rails.application.routes.draw do
 
   resources :recipe_ingredients, only: [:edit, :update, :destroy]
   resources :categories, only:[:index, :show]
-  get '/search', to: 'recipes#search'
 
+  resources :ingredients, only: [:show]
   # resources :recipes do
   #   resources :ratings, shallow: true
   # end
