@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20160714215340) do
 
   # These are extensions that must be enabled in order to support this database
@@ -68,14 +67,14 @@ ActiveRecord::Schema.define(version: 20160714215340) do
   create_table "recipes", force: :cascade do |t|
     t.string   "name",               null: false
     t.string   "difficulty_level",   null: false
-    t.integer  "prep_time_min"
-    t.integer  "prep_time_hours"
     t.text     "directions",         null: false
     t.text     "description",        null: false
     t.string   "creator",            null: false
     t.integer  "servings",           null: false
     t.integer  "category_id"
     t.integer  "user_id"
+    t.integer  "prep_time_hours"
+    t.integer  "prep_time_min"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
