@@ -16,11 +16,14 @@ Before running this application you will need to have:
 Gems used in the app also include paperclip, pg_search, bcrypt, and will_paginate.
 #### Local
 
-    $ git clone https://github.com/caitlinchai/chowsource_blc.git
+    $ git clone https://github.com/caitlinchai/chowsource.git
     $ bundle install 
     $ rails db:setup 
     $ rails s
 Open **Chowsource** on your browser at localhost:3000.
+
+#### Screenshots
+![home](https://s3.amazonaws.com/chowsource/Screen+Shot+2016-08-30+at+9.01.04+PM.png)
 
 #### MIT License
 [MIT license](https://opensource.org/licenses/mit-license)
